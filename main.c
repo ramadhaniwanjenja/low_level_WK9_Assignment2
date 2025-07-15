@@ -51,3 +51,40 @@ void runSalaryCalculator() {
     printf("Net Salary: $%.2f\n", netSalary);
     
 }
+
+// Forward declarations for other team members' functions
+void runNameSorting();
+void runMemoryManagement();
+
+int main() {
+    int choice;
+    
+    while (1) {
+        printf("\n=== PROJECT MENU ===\n");
+        printf("1. Net Salary Calculator\n");
+        printf("2. Name Sorting\n");
+        printf("3. Memory Management\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        
+        switch (choice) {
+            case 1:
+                runSalaryCalculator();
+                break;
+            case 2:
+                printf("Name Sorting - To be implemented by Sipho\n");
+                break;
+            case 3:
+                printf("Memory Management - To be implemented by Tejiri\n");
+                break;
+            case 4:
+                printf("Goodbye!\n");
+                exit(0);
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
+    
+    return 0;
+}

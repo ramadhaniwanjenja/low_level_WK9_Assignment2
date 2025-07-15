@@ -37,3 +37,17 @@ void calculateNetSalary(double *grossSalary, double *netSalary) {
     
     *netSalary = *grossSalary - tax - medical - maternity - social;
 }
+
+void runSalaryCalculator() {
+    double grossSalary, netSalary;
+    
+    printf("=== NET SALARY CALCULATOR ===\n");
+    printf("Enter gross salary: $");
+    scanf("%lf", &grossSalary);
+    
+    calculateNetSalary(&grossSalary, &netSalary);
+    
+    printf("Gross Salary: $%.2f\n", grossSalary);
+    printf("Net Salary: $%.2f\n", netSalary);
+    
+}

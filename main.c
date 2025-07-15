@@ -26,3 +26,14 @@ void calculateMaternityLeave(double *grossSalary, double *maternity) {
 void calculateSocialSecurity(double *grossSalary, double *social) {
     *social = *grossSalary * 0.03;
 }
+
+void calculateNetSalary(double *grossSalary, double *netSalary) {
+    double tax, medical, maternity, social;
+    
+    calculateTax(grossSalary, &tax);
+    calculateMedicalInsurance(grossSalary, &medical);
+    calculateMaternityLeave(grossSalary, &maternity);
+    calculateSocialSecurity(grossSalary, &social);
+    
+    *netSalary = *grossSalary - tax - medical - maternity - social;
+}

@@ -14,3 +14,15 @@ void calculateTax(double *grossSalary, double *tax) {
         *tax = *grossSalary * 0.28;
     }
 }
+
+void calculateMedicalInsurance(double *grossSalary, double *medical) {
+    *medical = *grossSalary * 0.05;
+}
+
+void calculateMaternityLeave(double *grossSalary, double *maternity) {
+    *maternity = *grossSalary * 0.003;
+}
+
+void calculateSocialSecurity(double *grossSalary, double *social) {
+    *social = *grossSalary * 0.03;
+}

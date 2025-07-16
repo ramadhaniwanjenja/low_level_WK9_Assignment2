@@ -89,6 +89,10 @@ int main() {
         // ============================================
         // QUESTION 2: NAME SORTINGGGGGGGGG
         // ============================================
+        //ASCENDING ORDER Declaring of two persons names so they can be compared comparitively.
+        int compare_asc(const char *name1, const char *name2) {
+            return strcmp(name1, name2);
+        }
 
 
     }

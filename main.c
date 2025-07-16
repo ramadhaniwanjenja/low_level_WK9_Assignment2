@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h> //need this for string manipulation
 
 // ============================================
 // QUESTION 1: NET SALARY CALCULATOR 
@@ -48,7 +49,7 @@ void runSalaryCalculator() {
     calculateNetSalary(&grossSalary, &netSalary);
     
     printf("Gross Salary: $%.2f\n", grossSalary);
-    printf("Net Salary: $%.2f\n", netSalary);
+    printf"Net Salary: $%.2f\n", netSalary);
     
 }
 
@@ -84,6 +85,12 @@ int main() {
             default:
                 printf("Invalid choice. Please try again.\n");
         }
+
+        // ============================================
+        // QUESTION 2: NAME SORTINGGGGGGGGG
+        // ============================================
+
+
     }
     
     return 0;

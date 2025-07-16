@@ -99,6 +99,22 @@ int main() {
             return strcmp(name2, name1); // Swap arguments for descending order
         }
 
+        void bubble_sort(char names[][100], int count, int (*compare)(const char *, const char *)) {
+            char temp[100]; // Temp holder for sorting names
+
+            for (int i = 0; i < count - 1; i++) {
+                for (int j = 0; j < count - i - 1; j++) {
+                    //compare func used via func pointer
+                    if (compare(names[j], names[j+1]) > 0) {
+                        //Swap the names for comparison
+                        strcpy(temp, names[j]);
+                        strcpy(names[j], names[j+1]);
+                        strcpy(names[j+1], temp);
+                    }
+                }
+            }
+        }
+
 
     }
     

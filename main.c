@@ -57,6 +57,35 @@ void runSalaryCalculator() {
 void runNameSorting();
 void runMemoryManagement();
 
+// ============================================
+// QUESTION 2: NAME SORTINGGGGGGGGG
+// ============================================
+//ASCENDING ORDER Declaring of two persons names so they can be compared comparitively.
+int compare_asc(const char *name1, const char *name2) {
+    return strcmp(name1, name2);
+}
+
+//DESCENDING ORDER DECLARATION OF CONSTS
+int compare_desc(const char *name1, const char *name2) {
+    return strcmp(name2, name1); // Swap arguments for descending order
+}
+
+void bubble_sort(char names[][100], int count, int (*compare)(const char *, const char *)) {
+    char temp[100]; // Temp holder for sorting names
+
+    for (int i = 0; i < count - 1; i++) {
+        for (int j = 0; j < count - i - 1; j++) {
+            //compare func used via func pointer
+            if (compare(names[j], names[j+1]) > 0) {
+                //Swap the names for comparison
+                strcpy(temp, names[j]);
+                strcpy(names[j], names[j+1]);
+                strcpy(names[j+1], temp);
+            }
+        }
+    }
+}
+
 int main() {
     int choice;
     
@@ -85,38 +114,6 @@ int main() {
             default:
                 printf("Invalid choice. Please try again.\n");
         }
-
-        // ============================================
-        // QUESTION 2: NAME SORTINGGGGGGGGG
-        // ============================================
-        //ASCENDING ORDER Declaring of two persons names so they can be compared comparitively.
-        int compare_asc(const char *name1, const char *name2) {
-            return strcmp(name1, name2);
-        }
-
-        //DESCENDING ORDER DECLARATION OF CONSTS
-        int compare_desc(const char *name1, const char *name2) {
-            return strcmp(name2, name1); // Swap arguments for descending order
-        }
-
-        void bubble_sort(char names[][100], int count, int (*compare)(const char *, const char *)) {
-            char temp[100]; // Temp holder for sorting names
-
-            for (int i = 0; i < count - 1; i++) {
-                for (int j = 0; j < count - i - 1; j++) {
-                    //compare func used via func pointer
-                    if (compare(names[j], names[j+1]) > 0) {
-                        //Swap the names for comparison
-                        strcpy(temp, names[j]);
-                        strcpy(names[j], names[j+1]);
-                        strcpy(names[j+1], temp);
-                    }
-                }
-            }
-        }
-
-
     }
-    
     return 0;
 }

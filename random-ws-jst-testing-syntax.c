@@ -3,7 +3,7 @@
 #include <string.h> //need this for string manipulation
 
 // ============================================
-// QUESTION 1: NET SALARY CALCULATOR 
+// QUESTION 1: NET SALARY CALCULATOR
 // ============================================
 
 void calculateTax(double *grossSalary, double *tax) {
@@ -30,27 +30,27 @@ void calculateSocialSecurity(double *grossSalary, double *social) {
 
 void calculateNetSalary(double *grossSalary, double *netSalary) {
     double tax, medical, maternity, social;
-    
+
     calculateTax(grossSalary, &tax);
     calculateMedicalInsurance(grossSalary, &medical);
     calculateMaternityLeave(grossSalary, &maternity);
     calculateSocialSecurity(grossSalary, &social);
-    
+
     *netSalary = *grossSalary - tax - medical - maternity - social;
 }
 
 void runSalaryCalculator() {
     double grossSalary, netSalary;
-    
+
     printf("=== NET SALARY CALCULATOR ===\n");
     printf("Enter gross salary: $");
     scanf("%lf", &grossSalary);
-    
+
     calculateNetSalary(&grossSalary, &netSalary);
-    
+
     printf("Gross Salary: $%.2f\n", grossSalary);
     printf("Net Salary: $%.2f\n", netSalary);
-    
+
 }
 
 // Forward declarations for other team members' functions
@@ -59,7 +59,7 @@ void runMemoryManagement();
 
 int main() {
     int choice;
-    
+
     while (1) {
         printf("\n=== PROJECT MENU ===\n");
         printf("1. Net Salary Calculator\n");
@@ -68,7 +68,7 @@ int main() {
         printf("4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
-        
+
         switch (choice) {
             case 1:
                 runSalaryCalculator();
@@ -94,13 +94,8 @@ int main() {
             return strcmp(name1, name2);
         }
 
-        //DESCENDING ORDER DECLARATION OF CONSTS
-        int compare_desc(const char *name1, const char *name2) {
-            return strcmp(name2, name1); // Swap arguments for descending order
-        }
-
 
     }
-    
+
     return 0;
 }

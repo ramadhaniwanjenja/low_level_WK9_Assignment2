@@ -86,6 +86,51 @@ void bubble_sort(char names[][100], int count, int (*compare)(const char *, cons
     }
 }
 
+void runNameSorting() {
+    char names[20][100]; //Array stores 20+ chars
+    int num_names = 20;
+    char order[5]; //To store "ASCEND" or "DESCEND"
+
+    printf("=== NAME SORTING ===\n");
+    printf("Please enter 20 full names:\n");
+
+    //Taking names from the user and taking care of line endings
+    while (getchar() != '\n');
+    for (int i = 0; i < num_names; i++) {
+        printf("Enter name %d: ", i + 1);
+        fgets(names[i], sizeof(names[i]), stdin);
+        // Remove trailing newline character from fgets
+        names[i][strcspn(names[i], "\n")] = 0;
+    }
+
+    printf("\nEnter sorting order 'asc' for ascending OR 'desc' for descending: ");
+    scanf("%s", order);
+
+    //Function pointer to hold declared function
+    int (*compare_func_ptr)(const char *, const char *);
+
+    //Assigned appropriate func based on user input
+    if (strcmp(order, "asc") == 0) {
+        compare_func_ptr = compare_asc;
+        printf("\nSort names in ascending order:\n");
+    } else if (strcmp(order, "desc") == 0) {
+        compare_func_ptr = compare_desc;
+        printf("\nSort names in descending order:\n");
+    } else {
+        printf("Invalid order. Please enter 'asc' or 'desc'.\n");
+        return; // Exit if invalid input
+    }
+
+    //Calling bubble sort to do it's thing
+    bubble_sort(names, num_names, compare_func_ptr);
+
+    //Print all the sorted names
+    for (int i = 0; i < num_names; i++) {
+        printf("%s\n", names[i]);
+    }
+}
+
+
 int main() {
     int choice;
     

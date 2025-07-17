@@ -256,38 +256,3 @@ void runNameSorting() {
 }
 
 
-int main() {
-    int choice;
-
-    while (1) {
-        printf("\n=== PROJECT MENU ===\n");
-        printf("1. Net Salary Calculator\n");
-        printf("2. Name Sorting\n");
-        printf("3. Memory Management\n");
-        printf("4. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
-        switch (choice) {
-            case 1:
-                runSalaryCalculator();
-                break;
-            case 2:
-                runNameSorting();
-                break;
-            case 3:
-                runMemoryManagement();
-                break;
-            case 4:
-                printf("Goodbye!\n");
-                exit(0);
-            default:
-                printf("Invalid choice. Please try again.\n");
-        }
-    }
-<<<<<<< HEAD
-
-=======
->>>>>>> 8d554da1505e3cc69f4a8751b3c06f492d50ed76
-    return 0;
-}
